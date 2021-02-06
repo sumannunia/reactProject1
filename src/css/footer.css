@@ -1,0 +1,68 @@
+footer.footer {
+  padding: 2rem 0 2.5rem;
+}
+h3.footer-block-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  color: #413757;
+  margin-bottom: 1.2rem;
+}
+h6.mail-id {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  color: #413757;
+}
+h6.contact-no {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 25px;
+  color: #413757;
+  margin: 0.7rem 0;
+  white-space: nowrap;
+}
+h6.address {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  color: #413757;
+}
+li.footer-links {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  color: #413757;
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0 0 0.7rem;
+}
+ol.list-unstyled.social-list {
+  display: flex;
+  column-gap: 0.5rem;
+}
+li.social-links {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0px 1px 2px rgb(0 0 0 / 16%);
+  border-radius: 50%;
+}
+.copywright {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
+  color: #413757;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 2rem;
+}
