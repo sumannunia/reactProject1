@@ -1,0 +1,63 @@
+.theSmallActiveCircle {
+  width: 19px;
+  height: 19px;
+  /* background: red; */
+  margin-left: auto;
+  border-radius: 50%;
+  /*  */
+  box-sizing: border-box;
+  border: 1px solid #c4c4c4;
+}
+.theSmallActiveCircle.activeCard {
+  background: #eda71d;
+}
+.indidetheSubJectcard.activeCard {
+  border: 2px solid #eda71d;
+}
+.indidetheSubJectcard {
+  height: 240px;
+  background: #ffffff;
+  border: 2px solid #ddd7da;
+  box-sizing: border-box;
+  border-radius: 16px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+.indidetheSubJectcard:hover {
+  box-shadow: 0 0 5px #eda71d;
+  border: 2px solid #eda71d;
+}
+.theprogress-div-container {
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 14px;
+  /* text-align: center; */
+  color: #858e8c;
+  display: flex;
+  justify-content: space-between;
+}
+span.progress-bar-span {
+  background: linear-gradient(90deg, #6d91ac 38.21%, #edcb63 83.21%);
+  border-radius: 8px;
+  width: 70%;
+  display: block;
+  height: 5px;
+}
+.theBarContainer {
+  background: #ededed;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+h3.subjectOfCard {
+  font-weight: 350;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #403a5d;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}

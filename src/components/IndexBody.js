@@ -1,40 +1,53 @@
-import React from 'react'
+import React from 'react';
 import {useState} from 'react';
 import '../css/index-body.css';
 import WorksheetImg from '../images/worksheet.png';
 import {data} from '../data';
+import {useFetch} from '../useFetch';
 
+let url = 'https://course-api.com/javascript-store-products';
 
 export const IndexBody = () => {
     let id = 1;
-    let filterData = data.filter(detail => {
-        return detail.id === id;
-    });
-    console.log(filterData);
-    const [question , setQuestion] = useState(filterData[0].title);
-
+    const fetching = useFetch(url);
+    const [question , setQuestion] = useState("Hello bro");
+    const [answer, setAnswer] = useState('');
 
     const [liActiveA, setLiActiveA] = useState("thelistFOrQuiz activeList");
     const [liActiveB, setLiActiveB] = useState("thelistFOrQuiz");
     const [liActiveC, setLiActiveC] = useState('thelistFOrQuiz');
     const [liActiveD, setLiActiveD] = useState('thelistFOrQuiz');
+    
 
-    console.log(question);
+    // console.log(question);
     const changeQuestion = (id, e) => {
-        console.log(e);
-        let title = data.filter(detail => {
+        // console.log(e);
+        // console.log(fetching.products)
+        // useFetch('http://13.233.126.86:8443/api/get-questions-for-test/1');
+        url = 'https://course-api.com/javascript-store-products';
+        let title = fetching.products.filter(detail => {
                 return detail.id === id;
             }).map(quest => {
-                console.log(quest)
-                return quest.title;
+                // console.log(quest)
+                return quest.fields.company;
             });
-
+        //    Fetch('http://13.233.126.86:8443/api/get-questions-for-test/1');
         setQuestion(title);
         setLiActiveA('thelistFOrQuiz');
         setLiActiveB('thelistFOrQuiz');
         setLiActiveC('thelistFOrQuiz');
         setLiActiveD('thelistFOrQuiz');
-        
+        // const {loading, questions} = useFetch('http://13.233.126.86:8443/api/get-questions-for-test/1');
+        // const { loading, products } = useFetch(url);
+        // useFetch(url);
+        // const fetching = useFetch(url);
+
+     };
+
+     const handelChangeInputFirst = (e) =>{
+        let theAnswer = e.target.value;
+        setAnswer(theAnswer);
+        console.log(answer)
      };
     return (
         <section>
@@ -201,11 +214,11 @@ export const IndexBody = () => {
                     <div className="col-md-5 col-lg-4 small-quiz-left-col">
                         <div className="inside-left-small-quiz-col">
                             <ul className="list-unstyled theQuiz-qsn-ul">
-                                <li className={liActiveA} onClick={(e) => {changeQuestion(1, e);
+                                <li className={liActiveA} onClick={(e) => {changeQuestion("rec43w3ipXvP28vog", e);
                                     setLiActiveA('thelistFOrQuiz activeList')}}>Nursery-LKG</li>
-                                <li className={liActiveB} onClick={(e) => {changeQuestion(2, e); setLiActiveB('thelistFOrQuiz activeList')}}>Nursery-LKG</li>
-                                <li className={liActiveC} onClick={(e) => {changeQuestion(3, e); setLiActiveC('thelistFOrQuiz activeList')}}>Nursery-LKG</li>
-                                <li className={liActiveD} onClick={(e) => {changeQuestion(4, e); setLiActiveD('thelistFOrQuiz activeList')}}>Nursery-LKG</li>
+                                <li className={liActiveB} onClick={(e) => {changeQuestion("recDG1JRZnbpRHpoy", e); setLiActiveB('thelistFOrQuiz activeList')}}>Nursery-LKG</li>
+                                <li className={liActiveC} onClick={(e) => {changeQuestion("recZEougL5bbY4AEx", e); setLiActiveC('thelistFOrQuiz activeList')}}>Nursery-LKG</li>
+                                <li className={liActiveD} onClick={(e) => {changeQuestion("rec4f2RIftFCb7aHh", e); setLiActiveD('thelistFOrQuiz activeList')}}>Nursery-LKG</li>
                             </ul>
                         </div>
                     </div>
@@ -214,7 +227,7 @@ export const IndexBody = () => {
                             <h3 className="quiz-right-title">{question}</h3>
                             <form>
                                 <div className="form-group"> 
-                                    <input type="email" className="form-control" id="theAnswer" aria-describedby="emailHelp" placeholder="Enter your answer" required/>
+                                    <input type="email" name="answer1" value={answer} onChange={handelChangeInputFirst} className="form-control" id="theAnswer" aria-describedby="emailHelp" placeholder="Enter your answer" required/>
                                 </div>
                                 <button type="submit" className="btn answer-button">Check Answer</button>
                             </form>

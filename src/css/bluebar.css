@@ -1,0 +1,15 @@
+h3.theSelectQuiz-title {
+  font-weight: 350;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #ffffff;
+}
+.theBlueBarWithouttimer {
+  background: #415d91;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}

@@ -1,0 +1,66 @@
+.container.thecardcontainer {
+  /* max-width: 1044px; */
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
+}
+.row.thCardsRow {
+  row-gap: 2rem;
+}
+button.btn.theSelectQuizBtn {
+  background: #eda71d;
+  border-radius: 8px;
+  color: #fff !important;
+  font-weight: 350;
+  font-size: 16px;
+  line-height: 19px;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+.theSelectButtonDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  width: 100%;
+  padding-right: 1rem;
+  padding-bottom: 24px;
+}
+.row.thCardsRow::after {
+  background: #eda71d;
+  border-radius: 16px;
+  transform: matrix(1, 0.02, -0.02, 1, 0, 0);
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  z-index: -1;
+}
+.row.thCardsRow {
+  row-gap: 2rem;
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  padding: 15px 0;
+  background: #ffffff;
+  border: 2px solid #ddd7da;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+@media screen and (max-width: 767px) {
+  .row.thCardsRow::after {
+    display: none;
+  }
+  .row.thCardsRow {
+    margin: 0 -5px 0 -5px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container.thecardcontainer {
+    max-width: 1044px;
+  }
+}

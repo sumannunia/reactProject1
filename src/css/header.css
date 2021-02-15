@@ -59,10 +59,35 @@ li.nav-item.loginNavlink a.nav-link {
   width: 140px;
   text-align: center;
 }
+
+li.nav-item.afterLogin a.dropdown-toggle {
+  background: #ffe9a7;
+  border-radius: 8px;
+  font-weight: 350;
+  font-size: 12px !important;
+  line-height: 17px;
+  color: #403a5d !important;
+  display: block;
+  width: 140px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.afterLogin div .dropdown-item {
+  font-size: 12px;
+  line-height: 14px;
+  color: #403a5d !important;
+}
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav {
     -ms-flex-direction: row;
     flex-direction: row;
     column-gap: 1rem;
   }
+}
+
+.btn {
+  box-shadow: none !important;
 }
