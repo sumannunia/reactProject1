@@ -1,46 +1,53 @@
 import React from 'react'
 
 const QuestionsText = (props) => {
+    // console.log(props.detail)
+    let x= props.detail.filter(data => {
+            return data.id === props.qsnNo;
+        });
+        let arrForNo = ["a", 'b', 'c', 'd'];  
+        // console.log(props.answerCollection[1]); 
+        
+       
+        const updateAnswer = (value) => {
+            props.answersGeneratedArr[props.qsnNo] = value
+            props.setActiveAnswer(value)
+            props.setanswerCollection(props.answersGeneratedArr)
+            console.log(props.answerCollection)
 
-    
+        }
     return (
         <div className="container">
             <div className="insideTheQuestionContainer">
-                <h4 className="theQuestionText">Question 3</h4>
+                <h4 className="theQuestionText">Question {props.qsnNo + 1}</h4>
                 <p className="thequestionForThePage">
-                    Susie needs 13 balloons. She already has 4 balloons. 
-                        How many more balloons does she need?
+                    {x[0].qsn}
                 </p>
                 <div className="options">
                     <div className="row theOptionsRow">
-                        <div className="col-6 option-col" onClick={() => props.setActiveAnswer("a")}>
-                            <div  className={props.activeAnswer === "a" ? "inside-option-col active" : "inside-option-col"}>
-                                <div className="theOptionName">a</div>
-                                <div className="theOptionAnswer">albert</div>
-                            </div>
-                        </div>
-                        <div className="col-6 option-col" onClick={() => props.setActiveAnswer("b")}>
-                            <div className={props.activeAnswer === "b" ? "inside-option-col active" : "inside-option-col"}>
-                                <div className="theOptionName">b</div>
-                                <div className="theOptionAnswer">albert</div>
-                            </div>
-                        </div>
-                        <div className="col-6 option-col" onClick={() => props.setActiveAnswer("c")}>
-                            <div className={props.activeAnswer === "c" ? "inside-option-col active" : "inside-option-col"}>
-                                <div className="theOptionName">c</div>
-                                <div className="theOptionAnswer">albert</div>
-                            </div>
-                        </div>
-                        <div className="col-6 option-col" onClick={() => props.setActiveAnswer("d")}>
-                            <div className={props.activeAnswer === "d" ? "inside-option-col active" : "inside-option-col"}>
-                                <div className="theOptionName">d</div>
-                                <div className="theOptionAnswer">albert</div>
-                            </div>
-                        </div>
+                        { 
+                        x[0].options.map((option, index) => {
+                            return <TheOption key={index} opt={option} setactiveanswer={props.setActiveAnswer} activeAns={props.activeAnswer} chars={arrForNo[index]} updateAnswer={updateAnswer} />
+                        })
+                    }
+                        
                     </div>
                 </div>
             </div>
         </div>
+    )
+}
+
+let TheOption = (val) => {
+    return (
+        <>
+            <div className="col-6 option-col" onClick={() => val.updateAnswer(val.opt)}>
+                <div  className={val.activeAns === val.opt ? "inside-option-col active" : "inside-option-col"}>
+                    <div className="theOptionName">{val.chars}</div>
+                    <div className="theOptionAnswer">{val.opt}</div>
+                </div>
+            </div>
+        </>
     )
 }
 

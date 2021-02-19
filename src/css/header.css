@@ -91,3 +91,10 @@ li.nav-item.afterLogin a.dropdown-toggle {
 .btn {
   box-shadow: none !important;
 }
+header {
+  box-shadow: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.08));
+  box-shadow: 0 0 8px 4px rgb(0 0 0 / 8%);
+}
+a {
+  text-decoration: none !important;
+}

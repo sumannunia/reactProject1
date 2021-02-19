@@ -1,0 +1,159 @@
+.container.quiz-result-container {
+  padding: 40px 15px;
+}
+h5.yourQuirText {
+  font-weight: 350;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: left;
+  color: #403a5d;
+  margin-bottom: 40px;
+}
+.inside-theresult-col {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1.25rem;
+  column-gap: 1.25rem;
+  justify-content: space-evenly;
+  min-height: 140px;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #ddd7da;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+}
+h5.theResultValue {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  font-weight: 350;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #415d91;
+}
+h6.correction-text {
+  font-weight: 350;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #858e8c;
+}
+.theBorderDiv {
+  position: absolute;
+  width: 2px;
+  height: calc(100% - 40px);
+  background: #ddd7da;
+}
+.inside-theresult-with-cards-subject {
+  margin-top: 1.25rem;
+  background: #ffffff;
+  border: 1px solid #ddd7da;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 20px;
+}
+.theSelectButtonDiv {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  width: 100%;
+  padding-right: 1rem;
+  padding-bottom: 0px;
+}
+.row.theResultSubjectRow {
+  row-gap: 1.25rem;
+}
+.theImageContFOrTheAvatar.mid img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 1px #f3c56c;
+  transition: all 0.2s ease-in;
+}
+.theImageContFOrTheAvatar.ends img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 1px #f3c56c;
+  transition: all 0.2s ease-in;
+}
+.theImageContFOrTheAvatar.ends,
+.theImageContFOrTheAvatar.mid {
+  position: relative;
+}
+h3.avatarName {
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #403a5d;
+  margin-top: 2.5rem;
+}
+h6.completedProgress {
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #415d91;
+}
+.theImageContFOrTheAvatar.ends span.avatarPosition {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #83b11b;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+}
+.theImageContFOrTheAvatar.mid span.avatarPosition {
+  position: absolute;
+  top: 50px;
+  right: -7px;
+  background: #f2a22f;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+}
+.row.theAvatarRow {
+  margin: 0;
+  justify-content: space-around;
+  padding: 20px;
+  background: #f4f8ff;
+  border-radius: 8px;
+  height: 100%;
+}
+.leader-boardSection {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+  max-height: calc(532px - 196px);
+  overflow: auto;
+}
+.inside-leader-board-col {
+  background: #f4f8ff;
+  border-radius: 8px;
+  /* height: 100%; */
+}
+.theImageContFOrTheAvatar.ends img:hover,
+.theImageContFOrTheAvatar.mid img:hover {
+  box-shadow: 0 0 8px 3px #f3c56c;
+}
+
+@media (min-width: 1200px) {
+  .col-md-4.col-lg-4.col-xl-3.thesubjectCard {
+    flex: 0 0 33%;
+    max-width: 33%;
+  }
+}

@@ -1,0 +1,42 @@
+.theRowForAvatar {
+  display: flex;
+  justify-content: space-around;
+  background: #ffffff;
+  border: 1px solid #ddd9f3;
+  border-radius: 8px;
+  min-height: 40px;
+  align-items: center;
+}
+.avatarWrapper {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+.NameWithAvaterImg {
+  display: flex;
+  column-gap: 0.7rem;
+  align-items: center;
+}
+.slNo {
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #403a5d;
+}
+.avatarNameText {
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 14px;
+  color: #403a5d;
+}
+.rankDetailsWIthCompletedData {
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: #415d91;
+}
+.theRowForAvatar:hover {
+  background: #ffe9a7;
+}

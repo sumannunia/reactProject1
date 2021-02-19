@@ -1,4 +1,14 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  useHistory,
+  useLocation
+} from "react-router-dom";
+
 import {useState} from 'react';
 import Logo from '../theIQkids.png';
 import '../css/header.css';
@@ -37,24 +47,24 @@ const TheAfterSignInHeader = (prop) =>{
     return <>
         <header>
             <nav className="navbar navbar-expand-lg navbar-light bg-light container">
-                <a className="navbar-brand" href="#"><img className="brandImg" src={Logo}></img></a>
+                <Link to="/" className="navbar-brand" ><img className="brandImg" src={Logo}></img></Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav the-center-aligned-nav">
                         <li className="nav-item active">
-                            <a className="nav-link" href="#">Quiz <span className="sr-only">(current)</span></a>
+                            <Link to='/quiz-options' className="nav-link" href="#">Quiz <span className="sr-only">(current)</span></Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">School</a>
+                            <Link to="/schools" className="nav-link" href="#">School</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Worksheet</a>
+                            <Link to="worksheet" className="nav-link" href="#">Worksheet</Link>
                         </li>
                         
                         {isLoggedIn ?  (<li className="nav-item">
-                            <a className="nav-link" href="#">Analysis</a>
+                            <Link to="/analysis" className="nav-link" href="#">Analysis</Link>
                         </li>) : ''}
                         
                     </ul>

@@ -1,24 +1,21 @@
 import React, {useState, useEffect} from 'react'
 
-var endDate = new Date().toISOString().slice(0,10);
-    var d = new Date().setMinutes(new Date().getMinutes() + 20);
-const BlueBarCounter = () => {
-    // const [time, setTime] = useState({min: "00", sec: "00"});
 
-    
-        
+const BlueBarCounter = (props) => {
+    // const [time, setTime] = useState({min: "00", sec: "00"});
+// console.log(props)
         // console.log(new Date(d).toLocaleTimeString())
-    var endTime = new Date(d).toLocaleTimeString();
+    var endTime = new Date(props.times.d).toLocaleTimeString();
     // console.log(endDate, endTime)  
-   
-    var countDownDate = new Date("" + endDate + " " + endTime).getTime();
+    var countDownDate = new Date("" + props.times.endDate + " " + endTime).getTime();
     const calculateTimeLeft = () => {
         var now = new Date().getTime();
         var distance = countDownDate - now;
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         // console.log(minutes, seconds)
-            let timeLeft = {};
+        let timeLeft = {};
+            
         if (distance > 0) {
             timeLeft = {
                 min: minutes,
@@ -39,12 +36,14 @@ const BlueBarCounter = () => {
   useEffect(() => {
     //   console.log(timeLeft)
     let theInterval = setInterval(() => {
+        calculateTimeLeft()
       setTimeLeft(calculateTimeLeft());
+      if(timeLeft.distance < 0) clearInterval(theInterval);
     }, 1000);
-    if(timeLeft.distance < 0) clearInterval(theInterval);
     // console.log('hello inside ')
     return () => clearInterval(theInterval)
   }, [timeLeft]);
+
 
     return (
         <div className="blueBarWithCounter">
