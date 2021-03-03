@@ -1,0 +1,262 @@
+.illustrator-login.active {
+  width: 118px;
+  height: 118px;
+  background: #fff;
+  border-radius: 50%;
+  border: 2px solid #415d91;
+  padding: 3px;
+}
+.illustrator-login {
+  width: 118px;
+  height: 118px;
+  background: #fff;
+  border-radius: 50%;
+  border: 1px solid #858e8c;
+  padding: 0px;
+}
+.inside-illastrator {
+  background: #c4c4c4;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.login-sec {
+  display: flex;
+  align-items: center;
+  column-gap: 2.5rem;
+}
+.inside-theleft-col {
+  background: #ffffff;
+  border: 2px solid #ddd7da;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 40px 10px;
+  row-gap: 100px;
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 3rem; */
+  position: relative;
+  width: 100%;
+}
+h3.log-type-text.activetext {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #415d91;
+}
+h3.log-type-text {
+  font-weight: 325;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #858e8c;
+}
+.inside-theleft-col::after {
+  content: "";
+  position: absolute;
+  background: #415d91;
+  border-radius: 8px;
+  transform: rotate(-1deg);
+  width: 100%;
+  height: 100%;
+  left: -5px;
+  bottom: 9px;
+  z-index: -1;
+}
+.row.theRowForLogin {
+  min-height: 688px;
+  /* align-items: center; */
+}
+.inside-form-col {
+  padding: 34px 15px 59px;
+  position: relative;
+  min-height: 420px;
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #ddd7da;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 100%;
+}
+.inside-form-col::after {
+  content: "";
+  position: absolute;
+  background: #415d91;
+  border-radius: 8px;
+  transform: matrix(1, 0.02, -0.02, 1, 0, 0);
+  width: 100%;
+  height: 100%;
+  bottom: -8px;
+  z-index: -1;
+  left: 10px;
+}
+.col-md-6.col-lg-4.theleft-col {
+  display: flex;
+  align-items: center;
+}
+
+.col-md-7.col-lg-7.form-col {
+  display: flex;
+  align-items: center;
+}
+h3.iqkids-text {
+  font-weight: 350;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #403a5d;
+}
+span.iq-color {
+  color: #eda71d;
+}
+button.Loginwithgoogle.btn {
+  background: #ffffff;
+  border-radius: 8px;
+  filter: drop-shadow(0px 2px 4px rgba(96, 86, 160, 0.15));
+  width: 100%;
+  max-width: 345px;
+  display: flex;
+  margin: 30px auto;
+  justify-content: center;
+  font-size: 14px;
+  height: 40px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #403a5d;
+}
+span.divider {
+  width: 100%;
+  max-width: 345px;
+  height: 2px;
+  background: #ddd9f3;
+  display: flex;
+  margin: auto;
+}
+.or-sec {
+  position: relative;
+  width: 100%;
+  max-width: 345px;
+  margin: auto;
+}
+span.or {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #858585;
+  text-transform: capitalize;
+  padding: 0 5px;
+}
+.login-form-section {
+  max-width: 345px;
+  margin: 30px auto 0;
+}
+label {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #838287;
+}
+input {
+  background: #ffffff;
+  border: 1px solid #ddd9f3;
+  border-radius: 8px;
+  box-shadow: none !important;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #838287;
+}
+button.btn.login-btn {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #ffffff;
+  background: #415d91;
+  border-radius: 8px;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+}
+
+/* ====== */
+.genderWrapper {
+  display: flex;
+  column-gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+.gender {
+  width: 100px;
+  height: 100px;
+  background: #ffffff;
+  border: 2px solid #ddd7da;
+  box-sizing: border-box;
+  border-radius: 8px;
+  /* border-radius: 5px; */
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 1rem;
+  position: relative;
+}
+span.genderName {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+  color: #403a5d;
+}
+.activeGender .theSmallCircle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #eda71d;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+}
+.activeGender.gender {
+  background: #ffffff;
+  border: 2px solid #eda71d;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 0 0 5px #eda71d;
+}
+.theSmallCircle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  /* background: #eda71d; */
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+}
+button.btn.login-btn.continue {
+  display: flex;
+  justify-content: center;
+  column-gap: 2rem;
+  align-items: center;
+  height: 40px;
+  font-weight: 600;
+  font-size: 14px;
+}
+@media screen and (min-width: 1200px) {
+  .inside-theleft-col {
+    padding: 40px;
+  }
+}

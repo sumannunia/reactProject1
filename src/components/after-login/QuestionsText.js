@@ -2,9 +2,11 @@ import React from 'react'
 
 const QuestionsText = (props) => {
     // console.log(props.detail)
-    let x= props.detail.filter(data => {
-            return data.id === props.qsnNo;
-        });
+    // let x= props.detail.filter(data => {
+    //         return data.id === props.qsnNo;
+    //     });
+    let x = props.detail[props.qsnNo];
+    console.log(x)
         let arrForNo = ["a", 'b', 'c', 'd'];  
         // console.log(props.answerCollection[1]); 
         
@@ -21,12 +23,12 @@ const QuestionsText = (props) => {
             <div className="insideTheQuestionContainer">
                 <h4 className="theQuestionText">Question {props.qsnNo + 1}</h4>
                 <p className="thequestionForThePage">
-                    {x[0].qsn}
+                    {x.question}
                 </p>
                 <div className="options">
                     <div className="row theOptionsRow">
                         { 
-                        x[0].options.map((option, index) => {
+                        x.options.map((option, index) => {
                             return <TheOption key={index} opt={option} setactiveanswer={props.setActiveAnswer} activeAns={props.activeAnswer} chars={arrForNo[index]} updateAnswer={updateAnswer} />
                         })
                     }

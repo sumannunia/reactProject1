@@ -3,77 +3,25 @@ import {useState, useEffect} from 'react';
 import '../css/index-body.css';
 import WorksheetImg from '../images/worksheet.png';
 import {data} from '../data';
-import {useFetch} from '../useFetch';
+import {getResponse} from '../useFetch';
+import useApiCall from '../apicall';
 
 let url = 'http://13.233.126.86:8443/api/get-question?quizIds=11';
-
 export const IndexBody = () => {
     let id = 1;
-    const fetching = useFetch(url);
-    const [answer, setAnswer] = useState('');
-    const [answer2, setAnswer2] = useState('')
-    const [actualAnswer, setActualAnswer] = useState(null);
-    const [ actualAnswer2, setActualAnswer2] = useState('');
+    const fetching = getResponse(url);
     
-    const [liActiveA, setLiActiveA] = useState("thelistFOrQuiz activeList");
-    const [liActiveB, setLiActiveB] = useState("thelistFOrQuiz");
-    const [liActiveC, setLiActiveC] = useState('thelistFOrQuiz');
-    const [liActiveD, setLiActiveD] = useState('thelistFOrQuiz');
-    const [activeImageQsn, setActiveImageQsn] = useState();
-    const [theActiveImgQsn, setTheActiveImgQsn] = useState({qsn: "", img: WorksheetImg})
-    // console.log(fetching)
-    const [question , setQuestion] = useState(fetching.loading == false ? fetching.products.content.Question[0].question : false);
-    const changeQuestion = (id, e) => {
-        
-        url = `http://13.233.126.86:8443/api/get-question?quizIds=${id}`;
-        
-        let title = fetching.products.content.Question[0].question;
-        setQuestion(title);
-        setActualAnswer(fetching.products.content.Question[0].answer)
-        setLiActiveA('thelistFOrQuiz');
-        setLiActiveB('thelistFOrQuiz');
-        setLiActiveC('thelistFOrQuiz');
-        setLiActiveD('thelistFOrQuiz');
-        setAnswer('');
-     };
-
-     const handelChangeInputFirst = (e) =>{
-        let theAnswer = e.target.value;
-        setAnswer(theAnswer);
-        console.log(answer)
-     };
-     const handleSubmit = (e) => {
-         e.preventDefault();
-        //  e.stopPro
-        if(answer === actualAnswer){
-            alert('correct');
-            setAnswer('');
-        }else {
-            alert('incorrect');
-        }
-     }
-     const imageListQuestion = (val, id) => {
-        setActiveImageQsn(val);
-         url = `http://13.233.126.86:8443/api/get-question?quizIds=${id}`;
-         console.log(fetching);
-         setTheActiveImgQsn({qsn: fetching.products.content.Question[0].question, img: fetching.products.content.Question[0].filename})
-         setActualAnswer2(fetching.products.content.Question[0].answer)
-         
-     };
-     const handleInputSecondChange = (e) => {
-         let theText = e.target.value;
-         setAnswer2(theText);
-
-     }
-     const handleSubmitSecond = (e) => {
-        e.preventDefault();
-        if(answer2 === actualAnswer2){
-            alert('correct');
-            setAnswer2('');
-        }else {
-            alert('incorrect');
-        }
-     }
+    
+    
+    // const [data, isLoading, getData ] = useApiCall();
+    
+    // useEffect(() => {
+    //     getData(url)
+    //     // console.log(data , isLoading, getData);
+    //     // return () => {getData()}
+    // }, [isLoading])
+    
+    
      return (
         <section>
         <article className="container the-top-explore">
@@ -236,28 +184,7 @@ export const IndexBody = () => {
             <div className="container quiz-qsn-ans-container">
                 <h5 className="sans-heading mb-4">TRY QUIZ</h5>
                 <div className="row theRowForQuitAnswer">
-                    <div className="col-md-5 col-lg-4 small-quiz-left-col">
-                        <div className="inside-left-small-quiz-col">
-                            <ul className="list-unstyled theQuiz-qsn-ul">
-                                <li className={liActiveA} onClick={(e) => {changeQuestion(11, e);
-                                    setLiActiveA('thelistFOrQuiz activeList')}}>Nursery-LKG</li>
-                                <li className={liActiveB} onClick={(e) => {changeQuestion(13, e); setLiActiveB('thelistFOrQuiz activeList')}}>Nursery-LKG</li>
-                                <li className={liActiveC} onClick={(e) => {changeQuestion(14, e); setLiActiveC('thelistFOrQuiz activeList')}}>Nursery-LKG</li>
-                                <li className={liActiveD} onClick={(e) => {changeQuestion(15, e); setLiActiveD('thelistFOrQuiz activeList')}}>Nursery-LKG</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-md-7 col-lg-8 large-col-right-for-quiz">
-                        <div className="inside-right-col-large-quiz">
-                            <h3 className="quiz-right-title">{question === false ? "Loading.." : question}</h3>
-                            <form>
-                                <div className="form-group"> 
-                                    <input type="text" name="answer1" value={answer} onChange={handelChangeInputFirst} className="form-control" id="theAnswer" aria-describedby="emailHelp" placeholder="Enter your answer" required/>
-                                </div>
-                                <button type="submit" className="btn answer-button" onClick={handleSubmit}>Check Answer</button>
-                            </form>
-                        </div>
-                    </div>
+                    <ListA />
                 </div>
             </div>
         </article>
@@ -412,36 +339,161 @@ export const IndexBody = () => {
                     </div>
                 </div>
                 <div className="row worksheet-large-row">
-                    <div className="col-md-5 col-lg-4 small-quiz-left-col">
-                        <div className="inside-left-small-quiz-col">
-                            
-                            <ul className="list-unstyled theQuiz-qsn-ul">
-                                <li className={activeImageQsn === "Nursery-LKG" ? "thelistFOrQuiz activeList" : "thelistFOrQuiz"} onClick={() => imageListQuestion("Nursery-LKG", 17)} >Nursery-LKG</li>
-                                <li className={activeImageQsn === "Sr KG-1st" ? "thelistFOrQuiz activeList" : "thelistFOrQuiz"} onClick={() => imageListQuestion("Sr KG-1st", 18)}>Sr KG-1st</li>
-                                <li className={activeImageQsn === "2nd-3rd" ? "thelistFOrQuiz activeList" : "thelistFOrQuiz"} onClick={() => imageListQuestion("2nd-3rd", 19)}>2nd-3rd</li>
-                                <li className={activeImageQsn === "4th-6th" ? "thelistFOrQuiz activeList" : "thelistFOrQuiz"} onClick={() => imageListQuestion("4th-6th", 20)}>4th-6th</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-md-7 col-lg-8 large-col-right-for-quiz">
-                        <div className="inside-right-col-large-quiz">
-                            <div className="image-container-worksheet">
-                                <img src={`${theActiveImgQsn.img}`}></img>
-                            </div>
-                            <div className="theBot-Worksheet ml-xl-3 ml-lg-2">
-                                <h3 className="quiz-right-title">{theActiveImgQsn.qsn}</h3>
-                                <form>
-                                    <div className="form-group"> 
-                                        <input type="text" className="form-control" id="theAnswer2" value={answer2} aria-describedby="emailHelp" name="answer2" placeholder="Enter your answer" required onChange={handleInputSecondChange} />
-                                    </div>
-                                    <button type="submit" className="btn answer-button" onClick={handleSubmitSecond}>Check Answer</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    <ListB />
                 </div>
             </div>
         </article>
         </section>
     )
+}
+
+const ListA = (props)=> {
+    let fetching;
+    let theId = 11;
+    url = `http://13.233.126.86:8443/api/get-question?quizIds=${theId}`;
+    fetching = getResponse(url);
+    const [activeLi, setActiveLi] = useState("Nursery-LKG");
+    const [actualAnswer, setActualAnswer] = useState(null);
+    const [answer, setAnswer] = useState('');
+    
+    const [data, isLoading, getData ] = useApiCall();
+    useEffect(() => {
+        getData(url);
+        // console.log(data , isLoading);
+        if(data !== null){
+
+            setActualAnswer(data.content.Question[0].answer);
+        }
+        
+    }, [isLoading]);
+    const changeQuestion = async (id, e, theSub) => {
+        setActiveLi(theSub)
+      url = `http://13.233.126.86:8443/api/get-question?quizIds=${id}`;
+       getData(url)
+        // theId = id; 
+        // console.log(fetching)
+        
+        // setActualAnswer(fetching.products.content.Question[0].answer)
+        setAnswer('');
+        // console.log(fetching.products)
+        
+        // console.log(data)
+        // setActualAnswer(data.content.Question[0].answer); 
+     };
+    const handelChangeInputFirst = (e) =>{ 
+        let theAnswer = e.target.value;
+        setAnswer(theAnswer);
+        // console.log(answer)
+     };
+     const handleSubmit = (e) => {
+         e.preventDefault();
+        console.log(data.content.Question[0].answer)
+        if(answer === data.content.Question[0].answer){
+            alert('correct');
+            setAnswer('');
+        }else {
+            alert('incorrect');
+        }
+     }
+      
+    return <>
+        <div className="col-md-5 col-lg-4 small-quiz-left-col">
+            <div className="inside-left-small-quiz-col">
+                <ul className="list-unstyled theQuiz-qsn-ul">
+                    <li className={activeLi === "Nursery-LKG" ? 'thelistFOrQuiz activeList' : 'thelistFOrQuiz'} onClick={(e) => {changeQuestion(11, e, "Nursery-LKG")}}>Nursery-LKG</li>
+                    <li className={activeLi === "Junior  Lkg" ? 'thelistFOrQuiz activeList' : 'thelistFOrQuiz'} onClick={(e) => {changeQuestion(13, e, "Junior  Lkg") }}>Junior  Lkg</li>
+                    <li className={activeLi === "Senior-LKG" ? 'thelistFOrQuiz activeList' : 'thelistFOrQuiz'} onClick={(e) => {changeQuestion(14, e, "Senior-LKG") }}>Senior-LKG</li>
+                    <li className={activeLi === "Primary" ? 'thelistFOrQuiz activeList' : 'thelistFOrQuiz'} onClick={(e) => {changeQuestion(15, e, "Primary")}}>Primary</li>
+                </ul>
+            </div>
+        </div>
+        <div className="col-md-7 col-lg-8 large-col-right-for-quiz">
+            <div className="inside-right-col-large-quiz">
+                <h3 className="quiz-right-title">{isLoading === true ? "Loading.." : data.content.Question[0].question}</h3>
+                <form>
+                    <div className="form-group"> 
+                        <input type="text" name="answer1" value={answer} onChange={handelChangeInputFirst} className="form-control" id="theAnswer" aria-describedby="emailHelp" placeholder="Enter your answer" required/>
+                    </div>
+                    <button type="submit" className="btn answer-button" onClick={handleSubmit}>Check Answer</button>
+                </form>
+            </div>
+        </div>
+     </>
+}
+
+const ListB = () => {
+    let theId = 17;
+    let url = `http://13.233.126.86:8443/api/get-question?quizIds=${theId}`;
+    const [activeImageQsn, setActiveImageQsn] = useState("Nursery-LKG");
+    // const [theActiveImgQsn, setTheActiveImgQsn] = useState({qsn: "", img: WorksheetImg});
+    const [answer2, setAnswer2] = useState('')
+    const [ actualAnswer2, setActualAnswer2] = useState(null);
+    // console.log(fetching)
+
+    
+    const [data, isLoading, getData] = useApiCall();
+     
+    useEffect(() => {
+        getData(url)
+        // return () => getData();
+        console.log(data)
+    }, [url, isLoading]);
+
+
+     const imageListQuestion = (val, id) => {
+         setActiveImageQsn(val);
+         url = `http://13.233.126.86:8443/api/get-question?quizIds=${id}`;
+        //  console.log(fetching);
+        //  setTheActiveImgQsn({qsn: fetching.products.content.Question[0].question, img: fetching.products.content.Question[0].filename})
+        //  setActualAnswer2(fetching.products.content.Question[0].answer)
+         getData(url)
+        //  setTimeout(() => {
+        //      console.log(data)
+        //  }, 2000)
+     };
+     const handleInputSecondChange = (e) => {
+         let theText = e.target.value;
+         setAnswer2(theText);
+
+     }
+     const handleSubmitSecond = (e) => {
+        e.preventDefault();
+        console.log(data.content.Question[0].answer)
+        setActualAnswer2(data.content.Question[0].answer)
+        if(answer2 === data.content.Question[0].answer){
+            alert('correct');
+            setAnswer2('');
+        }else {
+            alert('incorrect');
+        }
+     }
+    return <>
+        <div className="col-md-5 col-lg-4 small-quiz-left-col">
+            <div className="inside-left-small-quiz-col">
+                
+                <ul className="list-unstyled theQuiz-qsn-ul">
+                    <li className={activeImageQsn === "Nursery-LKG" ? "thelistFOrQuiz activeList" : "thelistFOrQuiz"} onClick={() => imageListQuestion("Nursery-LKG", 17)} >Nursery-LKG</li>
+                    <li className={activeImageQsn === "Sr KG-1st" ? "thelistFOrQuiz activeList" : "thelistFOrQuiz"} onClick={() => imageListQuestion("Sr KG-1st", 18)}>Sr KG-1st</li>
+                    <li className={activeImageQsn === "2nd-3rd" ? "thelistFOrQuiz activeList" : "thelistFOrQuiz"} onClick={() => imageListQuestion("2nd-3rd", 19)}>2nd-3rd</li>
+                    <li className={activeImageQsn === "4th-6th" ? "thelistFOrQuiz activeList" : "thelistFOrQuiz"} onClick={() => imageListQuestion("4th-6th", 20)}>4th-6th</li>
+                </ul>
+            </div>
+        </div>
+        <div className="col-md-7 col-lg-8 large-col-right-for-quiz">
+            <div className="inside-right-col-large-quiz">
+                <div className="image-container-worksheet">
+                    <img src={`${isLoading == true ? "" : data.content.Question[0].filename}`}></img>
+                </div>
+                <div className="theBot-Worksheet ml-xl-3 ml-lg-2">
+                    <h3 className="quiz-right-title">{isLoading == true ? "loading" : data.content.Question[0].question}</h3>
+                    <form>
+                        <div className="form-group"> 
+                            <input type="text" className="form-control" id="theAnswer2" value={answer2} aria-describedby="emailHelp" name="answer2" placeholder="Enter your answer" required onChange={handleInputSecondChange}  />
+                        </div>
+                        <button type="submit" className="btn answer-button" onClick={handleSubmitSecond}>Check Answer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </>
 }

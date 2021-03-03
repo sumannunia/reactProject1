@@ -21,7 +21,7 @@ function NextPrevSubmit(props) {
     let correctAns = 0;
     let wrongAns = 0;
     const submitAnswer = async () => {
-        console.log(props.qsnNo);
+        // console.log(props.qsnNo);
         
         props.theActualAnswer.forEach((element, index) => {
             if(element == props.answerCollection[index]){
@@ -31,13 +31,13 @@ function NextPrevSubmit(props) {
                 wrongAns += 1;
             }
         });
-        console.log(correctAns);
-        console.log(wrongAns);
+        // console.log(correctAns);
+        // console.log(wrongAns);
         await props.setCorrectAnswer([correctAns, wrongAns]);
         await console.log(props.correctAnswer)
         // props.setCorrectAnswer([correctAns, wrongAns]);
     };
-    console.log(props.correctAnswer)
+    // console.log(props.correctAnswer)
     // console.log(props.correctAnswer)
     // console.log(props.activeAnswer)
     return (

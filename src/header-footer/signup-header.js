@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  useHistory,
-  useLocation
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 import {useState} from 'react';
 import Logo from '../theIQkids.png';
@@ -41,7 +33,7 @@ const TheAfterSignInHeader = (prop) =>{
                                                         <a className="nav-link" href="#">Contact Us</a>
                                                     </li>
                                                     <li className="nav-item loginNavlink">
-                                                        <a className="nav-link" href="#">Login</a>
+                                                        <Link className="nav-link" to="/login">Login</Link>
                                                     </li>
                                                     </>
     return <>

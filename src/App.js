@@ -18,6 +18,8 @@ import {Mainpage} from './components/after-login/Mainpage';
 import Questions from './components/after-login/Questions';
 import NoMatch from './components/NotFound';
 import Result from './components/after-login/Result';
+import Login from './login/Login';
+import Signup from './login/SignUp';
 function App() {
   let loginStateValue = localStorage.getItem('loginStatus');
   const [loginState, setLoginState] = useState(loginStateValue)
@@ -50,6 +52,12 @@ function App() {
         <Route path="/result">
           {/* <Questions></Questions> */}
           <Result correctAnswer={correctAnswer} setCorrectAnswer={setCorrectAnswer} data={data} setData={setData} />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/signup">
+          <Signup />
         </Route>
         <Route path="*">
           <NoMatch />
