@@ -16,15 +16,18 @@ import {Footer} from './header-footer/footer';
 
 import {Mainpage} from './components/after-login/Mainpage';
 import Questions from './components/after-login/Questions';
+import Worksheet from './components/after-login/worksheet/Worksheet';
 import NoMatch from './components/NotFound';
 import Result from './components/after-login/Result';
 import Login from './login/Login';
 import Signup from './login/SignUp';
+import Teacher from './login/Teacher';
+
 function App() {
   let loginStateValue = localStorage.getItem('loginStatus');
   const [loginState, setLoginState] = useState(loginStateValue)
   const [correctAnswer, setCorrectAnswer] = useState([]);
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   return (<>
     <Router>
       <SigninHeader childData = {setLoginState} />
@@ -56,8 +59,14 @@ function App() {
         <Route path="/login">
           <Login />
         </Route>
+        <Route path="/worksheet">
+          <Worksheet />
+        </Route>
         <Route path="/signup">
           <Signup />
+        </Route>
+        <Route path="/teacher">
+          <Teacher />
         </Route>
         <Route path="*">
           <NoMatch />

@@ -6,14 +6,14 @@ function Signup() {
     const [password, setPassword] = useState(false);
     const [gender, setGender] = useState(null);
     const [showGender, setShowGender] = useState(false);
-    const [createKid, setCreateKid] = useState(false)
+    const [createKid, setCreateKid] = useState(false);
     const [kidData, setKidData] = useState({email: "",code: "", kidPassword: "", kidGender: "", kidDob: "", kidName: "", kidClass: ""});
     const handleInputChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
         setKidData({...kidData, [name]: value});
         // console.log(kidData);
-    }
+    };
     return (
         <section>
             <article className="container logincontainer">

@@ -24,9 +24,10 @@ export const Mainpage = () => {
     const selectedSubject = (activeCard) =>{
         console.log(activeCard);
     }
+    let bluebartext = 'Select your quiz'
     return (
         <div>
-            <BlueBar  />
+            <BlueBar  bluebartext={bluebartext}/>
             <div className='container thecardcontainer'>
                 <div className="row thCardsRow" >
                     <SubjectCard theCompletedCount="6" theSubject="Maths"   setActiveCard={setActiveCard} activeCard={activeCard}></SubjectCard>

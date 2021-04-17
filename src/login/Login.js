@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/login.css';
 import AuthLeftCol from './login-comps/LeftLoginSignupBox';
+import {Link} from 'react-router-dom';
 function Login() {
     return (
         <section>
@@ -34,6 +35,9 @@ function Login() {
                                     
                                     <button type="submit" className="btn login-btn">Login</button>
                                 </form>
+                            </div>
+                            <div className="teacher-login">
+                                <Link to="/teacher"><h4>Are yo a teacher?</h4></Link>
                             </div>
                         </div>
                     </div>

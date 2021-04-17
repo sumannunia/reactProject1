@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const BlueBar = () => {
+export const BlueBar = (props) => {
     return (
         <div className="theBlueBarWithouttimer">
-            <h3 className="theSelectQuiz-title">Select your Quiz</h3>
+            <h3 className="theSelectQuiz-title">{props.bluebartext}</h3>
         </div>
     )
 }

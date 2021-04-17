@@ -255,6 +255,16 @@ button.btn.login-btn.continue {
   font-weight: 600;
   font-size: 14px;
 }
+.teacher-login {
+  padding: 15px 0;
+  text-align: right;
+  max-width: 345px;
+  margin: auto;
+}
+.teacher-login h4 {
+  font-size: 18px;
+  cursor: pointer;
+}
 @media screen and (min-width: 1200px) {
   .inside-theleft-col {
     padding: 40px;

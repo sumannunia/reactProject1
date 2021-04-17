@@ -1,0 +1,279 @@
+.datepicker-div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  row-gap: 1.25rem;
+}
+h6.the-date-text {
+  margin-bottom: 0;
+  font-style: normal;
+  font-weight: 350;
+  font-size: 24px;
+  line-height: 29px;
+  color: #403a5d;
+}
+input.form-control.date-input {
+  background: #ffffff;
+  border: 1px solid #ddd9f3;
+  border-radius: 8px;
+  font-weight: 350;
+  font-size: 14px;
+  line-height: 17px;
+  color: #838287;
+}
+ul#tabs a.nav-link {
+  font-size: 18px;
+  line-height: 22px;
+  color: #858e8c;
+  margin-bottom: 0;
+  border: 0;
+}
+ul#tabs a.nav-link.active {
+  position: relative;
+}
+ul#tabs a.nav-link.active::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #415d91;
+  animation: width 0.4s forwards;
+  transform: scale(0);
+}
+.tabs-section {
+  background: #ffffff;
+  border: 1px solid #ddd7da;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 3px;
+}
+.nav-tabs {
+  border-bottom: 1px solid #ddd7da;
+}
+@keyframes width {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+div#myTabContent {
+  padding: 30px;
+}
+
+.image-card {
+  border: 1px solid #ddd7da;
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 240px;
+}
+.image-card-row {
+  row-gap: 1.25rem;
+}
+.div-for-upload {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 1.25rem;
+}
+button.btn.uploadBtn {
+  background: #eda71d;
+  border-radius: 8px;
+  width: 150px;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+}
+#uploadModal .modal-header {
+  background: #415d91;
+  color: #fff;
+}
+#uploadModal button.close {
+  color: #415d91;
+  border-radius: 50%;
+  background: #fff;
+  height: 31px;
+  width: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 21px;
+  top: 24px;
+}
+input.upload-input {
+  width: 100%;
+  height: 50px;
+  outline: 0;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #d4d4d4;
+}
+input#file-upload-button {
+  /* -webkit-background-clip: border-box; */
+  background-color: #fff !important;
+}
+.submit-btn-div {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0;
+}
+button.submit-btn.btn {
+  background: #eda71d;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+.submit-btn .spinner-border {
+  width: 25px;
+  height: 25px;
+}
+.progressbar {
+  margin: 1rem 0;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border-radius: 10px;
+  color: #fff;
+  background-color: green;
+}
+
+/* modal */
+#staticBackdrop .image-card {
+  border: 1px solid #ddd7da;
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+  height: auto;
+  max-height: 600px;
+}
+
+.kid-detail {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 0.5rem;
+}
+.avatar-side {
+  display: flex;
+  column-gap: 0.5rem;
+}
+.avatar {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  background: #6c757d;
+  border-radius: 50%;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+span.className {
+  font-weight: 350;
+  font-size: 14px;
+  line-height: 24px;
+  color: #403a5d5e;
+}
+h6.name-kid {
+  font-weight: 350;
+  font-size: 16px;
+  line-height: 24px;
+  color: #403a5d;
+  margin-bottom: 0;
+  max-width: 20ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 11ch;
+  white-space: nowrap;
+}
+.date-upload {
+  font-weight: 350;
+  font-size: 12px;
+  line-height: 24px;
+  color: #403a5d5e;
+}
+textarea#exampleFormControlTextarea1 {
+  background: #ffffff;
+  border: 1px solid #ddd9f3;
+  border-radius: 8px;
+}
+.text-area {
+  margin-top: 2rem;
+}
+textarea#exampleFormControlTextarea1 {
+  background: #ffffff;
+  border: 1px solid #ddd9f3;
+  border-radius: 8px;
+  box-shadow: none;
+}
+button.review-btn.btn {
+  background: #415d91;
+  border-radius: 8px;
+  width: 170px;
+  color: #fff;
+  font-weight: 600;
+}
+.radio-btns {
+  display: flex;
+  column-gap: 2rem;
+  margin: 1rem 0;
+}
+.review-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1rem;
+}
+.review-btn .spinner-border {
+  width: 25px;
+  height: 25px;
+}
+@media screen and (max-width: 600px) {
+  ul#tabs a.nav-link {
+    font-size: 10px;
+  }
+  button.btn.uploadBtn,
+  input.form-control.date-input {
+    width: 100%;
+  }
+  .datepicker-div .form-group {
+    width: 100%;
+  }
+  h6.the-date-text {
+    font-size: 16px;
+  }
+  button.review-btn.btn {
+    width: 100%;
+  }
+  .inside-col-right {
+    padding-top: 1rem;
+  }
+}
