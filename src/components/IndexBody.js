@@ -3,13 +3,13 @@ import {useState, useEffect} from 'react';
 import '../css/index-body.css';
 import WorksheetImg from '../images/worksheet.png';
 import {data} from '../data';
-import {getResponse} from '../useFetch';
+// import {getResponse} from '../useFetch';
 import useApiCall from '../apicall';
 
 let url = 'http://13.233.126.86:8443/api/get-question?quizIds=11';
 export const IndexBody = () => {
     let id = 1;
-    const fetching = getResponse(url);
+    // const fetching = getResponse(url);
     
     
     
@@ -348,10 +348,10 @@ export const IndexBody = () => {
 }
 
 const ListA = (props)=> {
-    let fetching;
+    // let fetching;
     let theId = 11;
     url = `http://13.233.126.86:8443/api/get-question?quizIds=${theId}`;
-    fetching = getResponse(url);
+    // fetching = getResponse(url);
     const [activeLi, setActiveLi] = useState("Nursery-LKG");
     const [actualAnswer, setActualAnswer] = useState(null);
     const [answer, setAnswer] = useState('');

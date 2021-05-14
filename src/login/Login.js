@@ -1,8 +1,16 @@
 import React from 'react';
 import '../css/login.css';
 import AuthLeftCol from './login-comps/LeftLoginSignupBox';
-import {Link} from 'react-router-dom';
-function Login() {
+import { connect, useDispatch } from "react-redux";
+import { loggedIn } from '../reducer/Actions';
+import { Link } from 'react-router-dom';
+
+
+
+function Login( { redux_state_loggedIn }) {
+    console.log(redux_state_loggedIn );
+    console.log(loggedIn);
+    const dispatch = useDispatch();
     return (
         <section>
             <article className="container logincontainer">
@@ -33,7 +41,7 @@ function Login() {
                                         <input type="password" className="form-control" id="loginPassword"/>
                                     </div>
                                     
-                                    <button type="submit" className="btn login-btn">Login</button>
+                                    <button type="submit" className="btn login-btn" onClick={ () => dispatch(loggedIn(!redux_state_loggedIn))}>Login = {String(redux_state_loggedIn)}</button>
                                 </form>
                             </div>
                             <div className="teacher-login">
@@ -47,4 +55,11 @@ function Login() {
     )
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+    return {
+        redux_state_loggedIn: state.redux_state_loggedIn
+    };
+};
+
+
+export default connect(mapStateToProps)(Login);
